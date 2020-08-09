@@ -7,6 +7,9 @@ export default function App() {
   const clickHandler = ()=>{
       setName("Zarif Rahat");
   }
+  const removenameclickHandler = ()=>{
+      setName("");
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -26,6 +29,8 @@ export default function App() {
         onChangeText={(val)=> setName(val)}/>
       <Button title="update name"
         onPress={clickHandler}/>
+      <Button title="remove Name"
+        onPress={removenameclickHandler}/>
     </SafeAreaView>
   );
 }
