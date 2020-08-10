@@ -6,6 +6,7 @@ export default function Home() {
     return (
         <SafeAreaView style={styles.container}>
             <Text>You are on the Home screen</Text>
+            <TextInput></TextInput>
         </SafeAreaView>
     )
 }
