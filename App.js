@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
 import { StyleSheet, Text, Image, View, SafeAreaView, TouchableOpacity, Button, TextInput } from 'react-native';
+import Home from './screens/home'
 
 export default function App() {
   const[name, setName] = useState("Zarif");
@@ -12,26 +13,7 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Text>Hello {name}!</Text>
-      <TouchableOpacity>
-        <Image source={
-          {
-            width: 200,
-            height: 300,
-            uri: "https://picsum.photos/200/300"
-          }
-        } />
-      </TouchableOpacity>
-      <StatusBar style="auto" />
-      <TextInput style={styles.input}
-        placeholder="Name"
-        onChangeText={(val)=> setName(val)}/>
-      <Button title="update name"
-        onPress={clickHandler}/>
-      <Button title="remove Name"
-        onPress={removenameclickHandler}/>
-    </SafeAreaView>
+    <Home/>
   );
 }
 
