@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, SafeAreaView, TouchableOpacity } from "react-native";
+import Card from "../shared/card";
 
-export default function WorkoutDetails() {
+export default function WorkoutDetails({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>You are on the WorkoutDetails screen</Text>
+        <Card>
+            <Text>{navigation.getParam('title')}</Text>
+            <Text>{navigation.getParam('days')}</Text>
+        </Card>
     </SafeAreaView>
   );
 }
