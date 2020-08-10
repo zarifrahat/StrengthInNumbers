@@ -5,7 +5,7 @@ import About from '../screens/about'
 import WorkoutDetails from '../screens/workoutDetails'
 
 const screens = {
-  Home: {
+  "Strength In Numbers": {
     screen: Home,
   },
   WorkoutDetails: {
@@ -16,4 +16,6 @@ const screens = {
   }
 };  
 
-const HomeStack = createStackNavigator(screens) ;
+const HomeStack = createStackNavigator(screens);
+
+export default createAppContainer(HomeStack);

@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
 import { StyleSheet, Text, Image, View, SafeAreaView, TouchableOpacity, Button, TextInput } from 'react-native';
 import Home from './screens/home'
+import Navigator from './routes/homeStack'
 
 export default function App() {
   const[name, setName] = useState("Zarif");
@@ -13,7 +14,7 @@ export default function App() {
   }
 
   return (
-    <Home/>
+    <Navigator/>
   );
 }
 
