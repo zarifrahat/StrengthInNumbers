@@ -6,6 +6,6 @@ Strength In Numbers is an app that allows you to create a custom workout and sta
 
 ## Wireframes
 
-![screen1](https://imgur.com/DOO265Y"Screen 1")
-![screen2](https://imgur.com/RZspCXX "Screen 2")
+![screen1](https://i.imgur.com/DOO265Y.png "Screen 1")
+![screen2](https://i.imgur.com/RZspCXX.png "Screen 2")
 
