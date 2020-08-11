@@ -7,13 +7,31 @@ export default function Home({navigation}) {
     const [modalOpen, setModalOpen ] = useState(false);
 
     const [workouts, setWorkouts] = useState([
-        {title: 'StrongLifts 5x5 Workout', days: ['Day A', 'Day B']},
-        {title: 'Fullbody Workout', days: ['Day 1', 'Day 2', 'Day 3']}
+        {title: 'StrongLifts 5x5 Workout', 
+        days: ['Day A', 'Day B'],
+        loggedWorkouts: [
+          {day: 'Day A', 
+          dateLogged: '08/01/2020', 
+          backSquat:{weight:300, sets: 5, reps: 5},
+          barbellBenchPress:{weight:200, sets: 5, reps: 5},
+          barbellRow:{weight:200, sets: 5, reps: 5}
+          },
+          {day: 'Day B', 
+          dateLogged: '08/03/2020', 
+          backSquat:{weight:305, sets: 5, reps: 5},
+          overheadPress:{weight:150, sets: 5, reps: 5},
+          deadlift:{weight:300, sets: 5, reps: 5}
+          }
+        ]
+      },
+        {title: 'Fullbody Workout',
+         days: ['Day 1', 'Day 2', 'Day 3']
+      }
     ])
 
     return (
       <SafeAreaView style={styles.container}>
-        <Text>You are on the Home screen</Text>
+        <Text style={styles.header}>Here are your work outs!</Text>
         <FlatList
           data={workouts}
           renderItem={({ item }) => (
@@ -33,6 +51,25 @@ export default function Home({navigation}) {
           onPress={() => setModalOpen(true)}
           style={styles.modalToggle}
         />
+        <SafeAreaView style={styles.bottomTab}>
+          <MaterialIcons
+            name="timeline"
+            size={40}
+            style={styles.modalToggle}
+          />
+
+          <MaterialIcons
+            name="home"
+            size={40}
+            style={styles.modalToggle}
+          />
+
+          <MaterialIcons
+            name="info"
+            size={40}
+            style={styles.modalToggle}
+          />
+        </SafeAreaView>
 
         <Modal visible={modalOpen} animationType="slide">
           <SafeAreaView style={styles.modalContent}>
@@ -55,6 +92,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    header:{
+      fontSize: 18,
+      marginVertical: 20,
+    },
     modalToggle:{
         marginBottom: 10, 
         borderWidth: 1,
@@ -62,5 +103,10 @@ const styles = StyleSheet.create({
         padding: 10, 
         borderRadius: 10,
         alignSelf: 'center',
+    },
+    bottomTab:{
+      flex: 1,
+      flexDirection: "row",
+      justifyContent: "space-between"
     }
 })
