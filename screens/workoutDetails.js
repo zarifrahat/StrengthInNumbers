@@ -23,20 +23,34 @@ export default function WorkoutDetails({ navigation }) {
   }else{
     let i = allWorkouts.length;
     while (i > 0) {
-      allWorkoutsDetails.push(allWorkouts[i-1])
+      allWorkoutsDetails.push(allWorkouts[i-1]);
       i--;
     }
   }
+
+  const workoutCards = allWorkoutsDetails.map(workout => {
+    let workoutKeys = Object.keys(workout).filter(key => key !== 'day' && key!== 'dateLogged')
+    console.log(workoutKeys)
+    const allExercises = workoutKeys.map(key =>{
+      return(
+        <Text>{key}: {workout[key].sets} x {workout[key].reps} @ {workout[key].weight}</Text>
+      )
+    })
+    return(
+      <Card>
+        <Text>{workout.day}</Text>
+        <Text>Done on: {workout.dateLogged}</Text>
+        {allExercises}
+      </Card>
+    )
+  });
 
   return (
     <SafeAreaView style={styles.container}>
       <Text>Last workout logged: {lastWorkout.day}</Text>
       <Text>on {lastWorkout.dateLogged}</Text>
       <Text>Today is {stringOfNextWorkout}!</Text>
-        <Card>
-            <Text>{navigation.getParam('title')}</Text>
-            <Text>{stringOfNextWorkout}</Text>
-        </Card>
+      {workoutCards}
     </SafeAreaView>
   );
 }
