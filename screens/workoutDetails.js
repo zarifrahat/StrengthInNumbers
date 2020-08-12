@@ -33,7 +33,7 @@ export default function WorkoutDetails({ navigation }) {
     console.log(workoutKeys)
     const allExercises = workoutKeys.map(key =>{
       return(
-        <Text>{key}: {workout[key].sets} x {workout[key].reps} @ {workout[key].weight}</Text>
+        <Text>{key}: {workout[key].sets} x {workout[key].reps} @ {workout[key].weight} lbs</Text>
       )
     })
     return(
@@ -50,6 +50,10 @@ export default function WorkoutDetails({ navigation }) {
       <Text>Last workout logged: {lastWorkout.day}</Text>
       <Text>on {lastWorkout.dateLogged}</Text>
       <Text>Today is {stringOfNextWorkout}!</Text>
+      <Card>
+        
+      </Card>
+      <Text>Last {daysArray.length} workouts</Text>
       {workoutCards}
     </SafeAreaView>
   );
